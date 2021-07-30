@@ -1,0 +1,198 @@
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body{
+    font-family: 'Yanone Kaffeesatz';
+    background: #8E2DE2;
+    background: -webkit-linear-gradient(to right, hsla(260, 100%, 44%, 0.428), #8E2DE2),url(../css/image/ruinas-de-copan.jpg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, hsla(260, 100%, 44%, 0.428), #8E2DE2),url(../css/image/ruinas-de-copan.jpg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.contenedor{
+    padding: 60px 0;
+    width: 60;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    font-weight: 100;
+}
+
+.titulo{
+    color:#642a73;
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+header{
+    width: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+nav{
+    text-align: right;
+    padding: 30px 50px 0 0;
+}
+
+nav > a{
+ color: white;
+ font-weight: 300;
+ text-decoration: none;
+ margin-right: 10px;
+}
+
+nav > a:hover{
+    text-decoration: solid;
+    background-color: white;
+   }
+
+.wave{
+   position: absolute;      
+   bottom: 0;
+   width: 100%;
+   }
+
+   header .texto_header{
+   padding:  140px 50px 0 0;
+   display: flex;
+   align-items: center;
+   justify-content:center ;
+   flex-direction: column;
+   text-align: center;
+   }
+
+   .texto_header h1{
+       font-size: 70px;
+       color: white;
+   }
+
+   .texto_header h2{
+    font-size: 30px;
+    font-weight: 300;
+    color: white;
+}
+.imagen-sobre-nosotros{
+    width: 55%;
+    
+}
+
+
+.contenedor-sobre-nosotros{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 30px;
+}
+
+.contenedor-sobre-nosotros .contenido-textos{
+    width: 43%; 
+    
+}
+
+.contenido-textos h3{
+    margin-bottom: 10px;
+    text-justify: 10;
+}
+
+.contenido-textos p{
+    padding-bottom: 50px;
+}
+
+.contenido-textos h3 span{
+    background: #4d0686;
+    color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    padding: 2px;
+    box-shadow:0 0 6px rgba(0, 0, 0, .5) ;
+}
+
+footer{
+    background: linear-gradient(#4d0686,#8E2DE2);
+    position: relative;
+    width: 100%;
+    height: 120px;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;   
+}
+
+.contenedor-footer{  
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding:  50px 150px 0 150px;
+    
+}
+.content-foo{
+    padding-left: 180px;
+}
+
+.contenedor-footer h4{
+  color: #fff;
+  padding-left: 70;
+  text-align: center;
+}
+
+.titulo-final {
+    color: #fff;
+    text-align: center;
+}
+
+main {
+  padding: 100px 400px 0px 400px;
+}
+
+main label{
+    color: #fff;
+    size: 30;
+  }
+
+main h1{
+   color: white;
+  }
+
+
+
+form label{
+	font-weight:bold;
+	display:flex;
+    font-size: 25;
+}
+form {
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.122);
+}
+form div{
+    margin-left: 180;
+}
+
+form div div{
+    display: inline-block;
+}
+form input{
+
+    font-size: 25;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.694);
+}
+
+form button{
+    border-radius: 10px;
+    font-size: 15;
+    font-weight: bold;
+    background: linear-gradient(#3b023d,#8d2de2b4);
+    color: #fff;
+    width: 90;
+    height: 50;
+}
+
