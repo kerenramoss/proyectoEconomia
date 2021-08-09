@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\ValidationException;
 
-class controllerLogin extends Controller
+class controllerHome extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +13,7 @@ class controllerLogin extends Controller
      */
     public function index()
     {
-      
+        //
     }
 
     /**
@@ -26,7 +23,7 @@ class controllerLogin extends Controller
      */
     public function create()
     {
-         return view("login.create"); 
+        //
     }
 
     /**
@@ -36,34 +33,9 @@ class controllerLogin extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {  
-       
-        $credenti = [
-            'email'=>'required|max:150|email|string',
-            'password'=>'required|string',
-        ];
-      
-         $email=$request->email;
-        $password=$request->password;   
-        
-        $very= \DB::select('SELECT * FROM users WHERE (username = ? OR email=?)', [$email,$email]);
-      if(count($very)==1){  
-        if (Hash::check($password, $very[0]->password)) {
-
-            return view("Home.home"); 
+    {
+        //
     }
-          else{
-        
-       throw ValidationException::withMessages([
-           'credenciales'=>'las credenciales no son correctas',
-            
-       ]);
-      }   $this->validate($request,$credenti);  
-      }
-    }
-    
-     
-    
 
     /**
      * Display the specified resource.
