@@ -21,7 +21,7 @@
       <a methd="get" href="{{url('ingresar/create')}}">Ingresar</a>
       </nav>
       <section class="texto_header">
-          <h1>Visita los Rincones Esondidos de Honduras</h1>
+          <h1>Visita los Rincones Escondidos de Honduras</h1>
           <h2>Viaja por Toda Honduras</h2>
         </section>
         <div class="wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-0.90,21.01 C150.00,150.00 353.49,-51.01 500.00,49.99 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path></svg></div>
