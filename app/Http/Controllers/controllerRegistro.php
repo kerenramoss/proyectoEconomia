@@ -37,35 +37,37 @@ class ControllerRegistro extends Controller
      */
     public function store(Request $request)
     {    
-        print($request); 
-        $che=$request->filled("check");
-        $credential = [
-            'fistName'=>'required|max:150|string',
-            'secondName'=>'required|max:150', 'string',
-            'username'=>'required|max:150|string',
-            'email'=>'required|max:150|email|unique:email|string',
-            'password'=>'required|string',
-            'passwordc'=>'required|same:password',
-            'ckeck'=>'required|same:on',
-        ];
-
-       
-        $this->validate($request,$credential);
-        
-        print_r($credential);
-      
-        $user = new User;
-        $user->fistName=$request->fistName;
-        $user->secondName=$request->secondName;
-        $user->username=$request->username;
-        $user->email=$request->email;
-        $user->password=password_hash($request->password,PASSWORD_BCRYPT);
-        $user->idrol=2;  
-        $user->save();
-
-        return view("landigpage");
+        $email=$request->email;
+        $very= \DB::select('SELECT * FROM users WHERE  email=?', [$email]);
+        if(count($very)==0){ 
+            $che=$request->filled("check");
+    
+            $credential = [
+                'fistName'=>'required|max:150|string',
+                'secondName'=>'required|max:150', 'string',
+                'username'=>'required|max:150|string',
+                'email'=>'required|max:150|email|string',
+                'password'=>'required|string',
+                'passwordc'=>'required|same:password',
+            ];
+    
+           
+            $this->validate($request,$credential);
+            
+          
+            $user = new User;
+            $user->fistName=$request->fistName;
+            $user->secondName=$request->secondName;
+            $user->username=$request->username;
+            $user->email=$request->email;
+            $user->password=password_hash($request->password,PASSWORD_BCRYPT);
+            $user->idrol=2;  
+            $user->save();
+    
+            return view("landigpage");
         }
-        
+        return view("RegistroArrendador.create");
+    } 
     
 
     /**

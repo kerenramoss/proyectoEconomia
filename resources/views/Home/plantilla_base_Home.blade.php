@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>catracho El Catracho Viajero</title>
+        <title> El Catracho Viajero</title>
 
         <!-- Fonts -->
         <link rel="stylesheet" href="{{asset('css/plantillaH.css')}}">

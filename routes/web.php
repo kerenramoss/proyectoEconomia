@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::resource('ingresar',App\Http\Controllers\controllerLogin::class);
 
-oute::resource('home',App\Http\Controllers\controllerHome::class);
+Route::resource('home',App\Http\Controllers\controllerHome::class);
 
 Route::resource('RegistroArrendador',App\Http\Controllers\ControllerRegistro::class);
 
