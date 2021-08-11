@@ -52,7 +52,9 @@ class controllerLogin extends Controller
         if (Hash::check($password, $very[0]->password)) {
          $depto= \DB::select('SELECT * FROM departament');
          $tipe= \DB::select('SELECT * FROM Tipeofplace');
-         return view("Home.home")->with('depto',$depto)->with('tipe',$tipe); 
+         $anuncios=\DB::select('SELECT * FROM advert');
+         
+         return view("Home.home")->with('depto',$depto)->with('tipe',$tipe)->with('anuncios',$anuncios); 
         }
        
           else{

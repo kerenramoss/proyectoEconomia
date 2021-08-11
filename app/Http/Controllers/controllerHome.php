@@ -15,9 +15,9 @@ class controllerHome extends Controller
     {
         $depto= \DB::select('SELECT * FROM departament');
         $tipe= \DB::select('SELECT * FROM Tipeofplace');
-        $anuancios;
+        $anuncios;
         if(request()-> depto){
-            $anuncios=\DB::select('SELECT * FROM advert WHERE (idtipeofplace = ? )', [depto]);
+            $anuncios=\DB::select('SELECT * FROM advert WHERE (tipeofplace = ? )', [depto]);
         }else{
             $anuncios=\DB::select('SELECT * FROM advert');
         }
@@ -44,7 +44,22 @@ class controllerHome extends Controller
     {
         //
     }
-
+    public function anuncioDetalle($id)
+    {
+        $anuncio=\DB::select('SELECT * FROM advert WHERE id= ?',[$id]);
+        $imagenes=\DB::select('SELECT * FROM listimagenes WHERE idadvert= ?',[$id]);
+        foreach($anuncio as $a){
+            $departament= $a->departament;
+            $tipeofplace=$a->tipeofplace;
+        }
+        
+        $depto=\DB::select('SELECT * FROM departament WHERE id= ?',[$departament]);
+   
+        $tipe=\DB::select('SELECT * FROM tipeofplace WHERE id= ?',[$tipeofplace]);
+        return view("Home.anunciodetalle")->with('anuncio',$anuncio)->with('depto',$depto)->with('tipe',$tipe)->with('imagenes',$imagenes);
+        
+    }
+    
     /**
      * Display the specified resource.
      *
@@ -53,7 +68,7 @@ class controllerHome extends Controller
      */
     public function show($id)
     {
-        //
+        return view("Home.anunciodetalle")->with('depto',$depto)->with('tipe',$tipe)->with('add',$anuncios);
     }
 
     /**
