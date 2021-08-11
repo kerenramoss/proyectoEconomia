@@ -68,7 +68,7 @@
         margin-left: 30px;
     }
 
-    .list-dep{
+    .list-dep {
         color: #fff;
         background-color: #4d0686;
         width: 200px;
@@ -76,6 +76,17 @@
         margin-left: 50px;
         margin-top: -50px;
         font-weight: bold;
+        text-decoration: none;
+    }
+
+    .list-dep li a{
+        color: #fff;
+        font-weight: bold;
+        text-decoration: none;
+        list-style: none;
+    }
+    .list-dep li {
+        list-style: none;
     }
 
     .list-tipe{
@@ -87,7 +98,15 @@
         margin-top: 20px;
         font-weight: bold;
     }
-
+    .list-tipe li a{
+        color: #fff;
+        font-weight: bold;
+        text-decoration: none;
+        list-style: none;
+    }
+    .list-tipe li {
+        list-style: none;
+    }
     .card-1{
         height: 260px;
         width: 200px;

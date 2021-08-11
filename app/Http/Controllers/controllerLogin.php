@@ -16,7 +16,8 @@ class controllerLogin extends Controller
      */
     public function index()
     {
-      
+       
+
     }
 
     /**
@@ -51,7 +52,6 @@ class controllerLogin extends Controller
         if (Hash::check($password, $very[0]->password)) {
          $depto= \DB::select('SELECT * FROM departament');
          $tipe= \DB::select('SELECT * FROM Tipeofplace');
-         
          return view("Home.home")->with('depto',$depto)->with('tipe',$tipe); 
         }
        

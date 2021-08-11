@@ -31,16 +31,17 @@
         <div class="siderbar">
       <div class="list-dep"> 
         <h4>Seleccione el Departamento:</h4>
-        <label><input type="checkbox" id="cbox1" value="first_checkbox" class="check">Todos los departamentos </label><br>
+        <li> <a href="">Todos los departamentos</a></li>
       @foreach($depto as $oneDep)
-      <label><input type="checkbox" id="cbox1" value="first_checkbox" class="check"> {{$oneDep->name}} </label><br>
+      <li> <a href="{{route(home.index,['depto'=>$oneDep->id]) }}"> {{$oneDep->name}} </a></li>
       @endforeach
+      
       </div>
       <div class="list-tipe">
       <h4>Seleccione el Tipo de lugar:</h4>
-      <label><input type="checkbox" id="cbox1" value="first_checkbox" class="check">Todos los Lugares </label><br>
+      <li> <a href="">Todos los Lugares  </a></li>
       @foreach($tipe as $onetip)
-      <label><input type="checkbox" id="cbox1" value="first_checkbox" class="check"> {{$onetip->name}} </label><br>
+      <li> <a href="">{{$onetip->name}}  </a></li>
       @endforeach
       </div>
       </div>

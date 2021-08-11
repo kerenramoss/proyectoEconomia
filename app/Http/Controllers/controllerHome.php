@@ -13,7 +13,15 @@ class controllerHome extends Controller
      */
     public function index()
     {
-        //
+        $depto= \DB::select('SELECT * FROM departament');
+        $tipe= \DB::select('SELECT * FROM Tipeofplace');
+        $anuancios;
+        if(request()-> depto){
+            $anuncios=\DB::select('SELECT * FROM advert WHERE (idtipeofplace = ? )', [depto]);
+        }else{
+            $anuncios=\DB::select('SELECT * FROM advert');
+        }
+        return view("Home.home")->with('depto',$depto)->with('tipe',$tipe)->with('add',$anuncios);
     }
 
     /**
