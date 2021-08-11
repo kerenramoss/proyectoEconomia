@@ -18,7 +18,10 @@
     </header>
     <main class="contenido">
        @yield("contenido");</main>
-       <footer>
+
+    
+   </body>   
+   <footer>
        <div class="contenedor-footer">
            <div class="content-foo">
                <h4 class >Telefono: +504 2255-3409</h4>      
@@ -30,6 +33,4 @@
            <h6 class="titulo-final"><class="titulo-final">&copy; ElCatrachoViajero</h6>
       
    </footer>
-   </body>   
-
 </html>

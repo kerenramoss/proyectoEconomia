@@ -49,9 +49,12 @@ class controllerLogin extends Controller
         $very= \DB::select('SELECT * FROM users WHERE (username = ? OR email=?)', [$email,$email]);
       if(count($very)==1){  
         if (Hash::check($password, $very[0]->password)) {
-
-            return view("Home.home"); 
-    }
+         $depto= \DB::select('SELECT * FROM departament');
+         $tipe= \DB::select('SELECT * FROM Tipeofplace');
+         
+         return view("Home.home")->with('depto',$depto)->with('tipe',$tipe); 
+        }
+       
           else{
         
        throw ValidationException::withMessages([
