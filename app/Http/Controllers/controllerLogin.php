@@ -49,12 +49,17 @@ class controllerLogin extends Controller
         
         $very= \DB::select('SELECT * FROM users WHERE (username = ? OR email=?)', [$email,$email]);
       if(count($very)==1){  
+        \Cache::put('idUser',$very[0]->id);
         if (Hash::check($password, $very[0]->password)) {
          $depto= \DB::select('SELECT * FROM departament');
          $tipe= \DB::select('SELECT * FROM Tipeofplace');
          $anuncios=\DB::select('SELECT * FROM advert');
+         if($very[0]->idrol==3){
+         return view("Home.homeArrendatario")->with('depto',$depto)->with('tipe',$tipe)->with('anuncios',$anuncios);
+         }else{
+         return view("Home.homeArrendador")->with('depto',$depto)->with('tipe',$tipe)->with('anuncios',$anuncios);
+         }
          
-         return view("Home.home")->with('depto',$depto)->with('tipe',$tipe)->with('anuncios',$anuncios); 
         }
        
           else{

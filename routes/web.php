@@ -25,6 +25,8 @@ Route::resource('ingresar',App\Http\Controllers\controllerLogin::class);
 
 Route::resource('home',App\Http\Controllers\controllerHome::class);
 
+Route::resource('AnunciosC',App\Http\Controllers\controllerAnuncio::class);
+
 Route::get('anuncios/{id}','App\Http\Controllers\controllerHome@anuncioDetalle');
 
 Route::resource('RegistroArrendador',App\Http\Controllers\ControllerRegistro::class);
