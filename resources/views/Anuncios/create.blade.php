@@ -45,7 +45,7 @@
   </div> 
 </div></div>
   <div>
-    <button name="buton" type="submit" class="crear">Crear Un Nuevo Anuncio</button>
+    <button name="buton" type="submit" class="crear"><a href="{{url('AnunciosC/show')}}">Crear Un Nuevo Anuncio</a></button>
   </div>
     
 </div>

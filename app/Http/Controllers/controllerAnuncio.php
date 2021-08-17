@@ -38,6 +38,13 @@ class controllerAnuncio extends Controller
         return view("Anuncios.create")->with('depto',$depto)->with('tipe',$tipe)->with('anuncios',$anuncios);
     }
 
+    public function nuevo()
+    {
+        print("holaa");
+        $idUser= \Cache::get('idUser');
+        return view("Anuncios.nuevo")->with('idUser',$idUser);
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -46,7 +53,7 @@ class controllerAnuncio extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
     public function anuncioDetalle($id)
     {
@@ -69,10 +76,12 @@ class controllerAnuncio extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
-     */
+  */   
     public function show($id)
     {
-        return view("Home.anunciodetalle")->with('depto',$depto)->with('tipe',$tipe)->with('add',$anuncios);
+        $idUser= \Cache::get('idUser');
+        return view("Anuncios.nuevo")->with('idUser',$idUser);
+      //  return view("Home.anunciodetalle")->with('depto',$depto)->with('tipe',$tipe)->with('add',$anuncios);
     }
 
     /**
