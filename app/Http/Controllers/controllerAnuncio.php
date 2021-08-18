@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Anuncio;
 class controllerAnuncio extends Controller
 {
     /**
@@ -15,6 +15,7 @@ class controllerAnuncio extends Controller
     {
         $depto= \DB::select('SELECT * FROM departament');
         $tipe= \DB::select('SELECT * FROM Tipeofplace');
+
         $anuncios;
         if(request()-> depto){
             $anuncios=\DB::select('SELECT * FROM advert WHERE (tipeofplace = ? )', [depto]);
@@ -53,7 +54,50 @@ class controllerAnuncio extends Controller
      */
     public function store(Request $request)
     {
-        
+
+        $credential = [
+            'imag'=>'required|max:500|string',
+            'name'=>'required|max:150|string',
+            'departament'=>'required',
+            'tipeofplace'=>'required',
+            'price'=>'required',
+            'description'=>'required|max:150|string',
+
+        ];
+
+
+        $this->validate($request,$credential);
+
+
+        $idepto=\DB::select('SELECT * FROM departament WHERE name=?',[$request ->departament]);
+        $idtipe=\DB::select('SELECT * FROM Tipeofplace WHERE name=?',[$request ->tipeofplace]);
+        foreach ($idepto as $dep){
+            $idept= $dep -> id;
+
+        }
+        foreach ($idtipe as $idtypes){
+            $idtip= $idtypes -> id;
+
+        }
+
+
+
+        \DB::table('advert')->insert([
+            'name' => $request->name,
+            'departament'=> $idept,
+            'tipeofplace'=> $idtip,
+            'imag'=> $request->imag,
+            'price' => $request->price,
+            'iduser' =>\Cache::get('idUser'),
+            'description' => $request->description
+        ]);
+
+
+       $idUser= \Cache::get('idUser');
+       $depto= \DB::select('SELECT * FROM departament');
+       $tipe= \DB::select('SELECT * FROM Tipeofplace');
+       $anuncios=\DB::select('SELECT * FROM advert WHERE (iduser = ? )', [$idUser]);
+       return view("Anuncios.create")->with('depto',$depto)->with('tipe',$tipe)->with('anuncios',$anuncios);
     }
     public function anuncioDetalle($id)
     {
@@ -63,24 +107,26 @@ class controllerAnuncio extends Controller
             $departament= $a->departament;
             $tipeofplace=$a->tipeofplace;
         }
-        
+
         $depto=\DB::select('SELECT * FROM departament WHERE id= ?',[$departament]);
-   
+
         $tipe=\DB::select('SELECT * FROM tipeofplace WHERE id= ?',[$tipeofplace]);
         return view("Home.anunciodetalle")->with('anuncio',$anuncio)->with('depto',$depto)->with('tipe',$tipe)->with('imagenes',$imagenes);
-        
+
     }
-    
+
     /**
      * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
-  */   
+  */
     public function show($id)
     {
-        $idUser= \Cache::get('idUser');
-        return view("Anuncios.nuevo")->with('idUser',$idUser);
+
+        $depto=\DB::select('SELECT * FROM departament');
+        $tipe= \DB::select('SELECT * FROM Tipeofplace');
+        return view("Anuncios.nuevo")-> with ('depto',$depto,)-> with('tipe', $tipe);
       //  return view("Home.anunciodetalle")->with('depto',$depto)->with('tipe',$tipe)->with('add',$anuncios);
     }
 

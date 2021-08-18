@@ -52,18 +52,18 @@ class controllerHome extends Controller
             $departament= $a->departament;
             $tipeofplace=$a->tipeofplace;
         }
-        
-        $depto=\DB::select('SELECT * FROM departament WHERE id= ?',[$departament]);
-   
-        $tipe=\DB::select('SELECT * FROM tipeofplace WHERE id= ?',[$tipeofplace]);
+
+        $depto=\DB::select('SELECT * FROM departament         WHERE id= ?',[$departament]);
+
+        $tipe=\DB::select('SELECT * FROM tipeofplace WH   ERE id= ?',[$tipeofplace]);
         return view("Home.anunciodetalle")->with('anuncio',$anuncio)->with('depto',$depto)->with('tipe',$tipe)->with('imagenes',$imagenes);
-        
+
     }
-    
+
     /**
      * Display the specified resource.
-     *
-     * @param  int  $id
+             *
+     *     @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
