@@ -8,7 +8,7 @@
 
         <!-- Fonts -->
         @production
-    <link rel="stylesheet" href="{{ secure_asset('css/landing.css') }}">
+    <link rel="stylesheet" href="{{asset('css/landing.css')}}">
 @endproduction
         <!--link rel="stylesheet" href="{{asset('css/landing.css')}}"-->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
