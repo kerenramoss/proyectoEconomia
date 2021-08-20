@@ -18,8 +18,6 @@ Route::get('/', function () {
     return view('landigpage');
 });
 
-//Route::get('home/','App\Http\Controllers\controllerHome@index')->name('home.index');
-//Route::get('home/{depto}','App\Http\Controllers\controllerHome@home')->name('home.home');
 
 Route::resource('ingresar',App\Http\Controllers\controllerLogin::class);
 
@@ -32,14 +30,6 @@ Route::get('anuncios/{id}','App\Http\Controllers\controllerHome@anuncioDetalle')
 Route::resource('RegistroArrendador',App\Http\Controllers\ControllerRegistro::class);
 
 Route::resource('RegistroArrendatario',App\Http\Controllers\ControllerRegistroArrendatario::class);
-//Route::post("registroA",'App\Http\Controllers\controllerRegistro@index');
-/*
 
-
-Route::get('login','App\Http\Controllers\controllerlogin@index');
-
-
-
-Route::get("registro",'App\Http\Controllers\controllerRegistro@index');*/
 
 
