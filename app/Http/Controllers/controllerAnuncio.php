@@ -15,7 +15,7 @@ class controllerAnuncio extends Controller
     public function index()
     {
         $depto= \DB::select('SELECT * FROM departament');
-        $tipe= \DB::select('SELECT * FROM Tipeofplace');
+        $tipe= \DB::select('SELECT * FROM tipeofplace');
 
         $anuncios;
         if(request()-> depto){
@@ -35,7 +35,7 @@ class controllerAnuncio extends Controller
     {
         $idUser= \Cache::get('idUser');
         $depto= \DB::select('SELECT * FROM departament');
-        $tipe= \DB::select('SELECT * FROM Tipeofplace');
+        $tipe= \DB::select('SELECT * FROM tipeofplace');
         $anuncios=\DB::select('SELECT * FROM advert WHERE (iduser = ? )', [$idUser]);
         return view("Anuncios.create")->with('depto',$depto)->with('tipe',$tipe)->with('anuncios',$anuncios);
     }
@@ -71,7 +71,7 @@ class controllerAnuncio extends Controller
 
 
         $idepto=\DB::select('SELECT * FROM departament WHERE name=?',[$request ->departament]);
-        $idtipe=\DB::select('SELECT * FROM Tipeofplace WHERE name=?',[$request ->tipeofplace]);
+        $idtipe=\DB::select('SELECT * FROM tipeofplace WHERE name=?',[$request ->tipeofplace]);
         foreach ($idepto as $dep){
             $idept= $dep -> id;
 
@@ -96,7 +96,7 @@ class controllerAnuncio extends Controller
 
        $idUser= \Cache::get('idUser');
        $depto= \DB::select('SELECT * FROM departament');
-       $tipe= \DB::select('SELECT * FROM Tipeofplace');
+       $tipe= \DB::select('SELECT * FROM tipeofplace');
        $anuncios=\DB::select('SELECT * FROM advert WHERE (iduser = ? )', [$idUser]);
        return view("Anuncios.create")->with('depto',$depto)->with('tipe',$tipe)->with('anuncios',$anuncios);
     }
@@ -108,10 +108,12 @@ class controllerAnuncio extends Controller
             $departament= $a->departament;
             $tipeofplace=$a->tipeofplace;
         }
+        $tipeofplace=(int)$tipeofplace;
+        $tipe=\DB::select('SELECT * FROM tipeofplace WHERE (id= ?)',[$tipeofplace]);
 
         $depto=\DB::select('SELECT * FROM departament WHERE id= ?',[$departament]);
 
-        $tipe=\DB::select('SELECT * FROM tipeofplace WHERE id= ?',[$tipeofplace]);
+        
         return view("Home.anunciodetalle")->with('anuncio',$anuncio)->with('depto',$depto)->with('tipe',$tipe)->with('imagenes',$imagenes);
 
     }
@@ -126,7 +128,7 @@ class controllerAnuncio extends Controller
     {
 
         $depto=\DB::select('SELECT * FROM departament');
-        $tipe= \DB::select('SELECT * FROM Tipeofplace');
+        $tipe= \DB::select('SELECT * FROM tipeofplace');
         return view("Anuncios.nuevo")-> with ('depto',$depto,)-> with('tipe', $tipe);
       //  return view("Home.anunciodetalle")->with('depto',$depto)->with('tipe',$tipe)->with('add',$anuncios);
     }

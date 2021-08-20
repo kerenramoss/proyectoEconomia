@@ -52,7 +52,7 @@ class controllerLogin extends Controller
         \Cache::put('idUser',$very[0]->id);
         if (Hash::check($password, $very[0]->password)) {
          $depto= \DB::select('SELECT * FROM departament');
-         $tipe= \DB::select('SELECT * FROM Tipeofplace');
+         $tipe= \DB::select('SELECT * FROM tipeofplace');
          $anuncios=\DB::select('SELECT * FROM advert');
          if($very[0]->idrol==3){
          return view("Home.homeArrendatario")->with('depto',$depto)->with('tipe',$tipe)->with('anuncios',$anuncios);
