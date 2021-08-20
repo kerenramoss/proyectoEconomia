@@ -8,7 +8,7 @@ use Illuminate\Database\Seeder;
 
 class ControllerRegistro extends Controller
 {
-    protected $namespace = null;
+    
     /**
      * Display a listing of the resource.
      *
