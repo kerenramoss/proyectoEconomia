@@ -22,8 +22,6 @@ Route::get('/', function () {
 
 Route::resource('RegistroArrendador',ControllerRegistro::class);
 
-
-
 Route::resource('ingresar',controllerLogin::class);
 
 Route::resource('home',controllerHome::class);
