@@ -1,5 +1,6 @@
 <?php
 
+namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Route;
 
@@ -19,17 +20,17 @@ Route::get('/', function () {
 });
 
 
-Route::resource('ingresar',App\Http\Controllers\controllerLogin::class);
+Route::resource('ingresar',controllerLogin::class);
 
-Route::resource('home',App\Http\Controllers\controllerHome::class);
+Route::resource('home',controllerHome::class);
 
-Route::resource('AnunciosC',App\Http\Controllers\controllerAnuncio::class);
+Route::resource('AnunciosC',controllerAnuncio::class);
 
-Route::get('anuncios/{id}','App\Http\Controllers\controllerHome@anuncioDetalle');
+Route::get('anuncios/{id}','controllerHome@anuncioDetalle');
 
-Route::resource('RegistroArrendador',App\Http\Controllers\ControllerRegistro::class);
+Route::resource('RegistroArrendador',ControllerRegistro::class);
 
-Route::resource('RegistroArrendatario',App\Http\Controllers\ControllerRegistroArrendatario::class);
+Route::resource('RegistroArrendatario',ControllerRegistroArrendatario::class);
 
 
 
