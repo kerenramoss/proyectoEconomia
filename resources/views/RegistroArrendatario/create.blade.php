@@ -9,7 +9,7 @@
       @section("contenido")
       <main>
      <h1>Registrarse Como Arrendatario </h1>
-     <form  action="{{ url('RegistroArrendatario') }}" method="post">
+     <form  action="{{ url('registroarrendatario') }}" method="post">
         <div>
         <label for="exampleInputEmail1" >Primer Nombre</label>
         @error('fistName') <p>{{"agregue su nombre"}}</p> @enderror

@@ -10,7 +10,7 @@
       @section("contenido")
       <main>
      <h1>Registrarse Como Arrendador </h1>
-     <form methd="post" action="/RegistroArrendador">
+     <form methd="post" action="/registroarrendador">
         <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Primer Nombre</label>
         <input name="fistName" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">

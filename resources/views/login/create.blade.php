@@ -4,8 +4,8 @@
 @section("cabecera")
     <nav >
       <a href="{{url('/')}}">Home</a>
-      <a methd="get" href="{{url('RegistroArrendador/create')}}">Registrarse como Arrendador</a>
-      <a methd="get" href="{{url('/RegistroArrendatario/create')}}">Registrarse como Arrendatario</a>
+      <a methd="get" href="{{url('registroarrendador/create')}}">Registrarse como Arrendador</a>
+      <a methd="get" href="{{url('/registroarrendatario/create')}}">Registrarse como Arrendatario</a>
       </nav>
 
       @section("contenido")

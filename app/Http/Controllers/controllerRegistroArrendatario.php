@@ -27,7 +27,7 @@ class ControllerRegistroArrendatario extends Controller
      */
     public function create()
     {
-        return view("RegistroArrendatario.create");
+        return view("registroarrendatario.create");
     }
 
     /**
@@ -67,7 +67,7 @@ class ControllerRegistroArrendatario extends Controller
     
             return view("landigpage");
         }
-        return view("RegistroArrendatario.create");
+        return view("registroarrendatario.create");
         }
         
     

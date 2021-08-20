@@ -18,7 +18,7 @@
   <nav>
       <a href="#">Acerca de</a>
       <a href="#">Servicios</a>
-      <a methd="get" href="{{url('RegistroArrendador/create')}}">Registrarse</a>
+      <a methd="get" href="{{url('registroarrendador/create')}}">Registrarse</a>
       <a methd="get" href="{{url('ingresar/create')}}">Ingresar</a>
       </nav>
       <section class="texto_header">

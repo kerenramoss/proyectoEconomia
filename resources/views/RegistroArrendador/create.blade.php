@@ -3,13 +3,13 @@
 @section("cabecera")
     <nav >
       <a href="{{url('/')}}">Home</a>
-      <a methd="get" href="{{url('/RegistroArrendatario/create')}}">Registrarse como Arrendatario</a>
+      <a methd="get" href="{{url('/registroarrendatario/create')}}">Registrarse como Arrendatario</a>
       <a methd="get" href="{{url('ingresar/create')}}">Ingresar</a>
       </nav>
       @section("contenido")
       <main>
       <h1>Registrarse Como Arrendador </h1>
-     <form  action="{{ url('RegistroArrendador') }}" method="post">
+     <form  action="{{ url('registroarrendador') }}" method="post">
         <div>
         <label for="exampleInputEmail1" >Primer Nombre</label>
         @error('fistName') <p>{{"agregue su nombre"}}</p> @enderror

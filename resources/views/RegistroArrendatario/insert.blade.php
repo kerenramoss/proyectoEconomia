@@ -10,7 +10,7 @@
 
       <main>
      <h1>Registrarse Como Arrendatario </h1>
-     <form methd="post" action="/RegistroArrendatario">
+     <form methd="post" action="/registroarrendatario">
         <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Primer Nombre</label>
         <input name="fistName" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
