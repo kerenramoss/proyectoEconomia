@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 
 
-Route::resource('registroarrendador',ControllerRegistro::class);
+Route::resource('registroarrendador',controllerRegistro::class);
 
 Route::resource('ingresar',controllerLogin::class);
 
@@ -28,7 +28,7 @@ Route::resource('home',controllerHome::class);
 
 Route::resource('AnunciosC',controllerAnuncio::class);
 
-Route::resource('registroarrendatario',ControllerRegistroArrendatario::class);
+Route::resource('registroarrendatario',controllerRegistroArrendatario::class);
 
 Route::get('anuncios/{id}','App\Http\Controllers\controllerHome@anuncioDetalle');
 
