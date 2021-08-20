@@ -20,6 +20,10 @@ Route::get('/', function () {
 });
 
 
+Route::resource('RegistroArrendador',ControllerRegistro::class);
+
+Route::resource('RegistroArrendatario',ControllerRegistroArrendatario::class);
+
 Route::resource('ingresar',controllerLogin::class);
 
 Route::resource('home',controllerHome::class);
@@ -28,9 +32,6 @@ Route::resource('AnunciosC',controllerAnuncio::class);
 
 Route::get('anuncios/{id}','App\Http\Controllers\controllerHome@anuncioDetalle');
 
-Route::resource('RegistroArrendador',ControllerRegistro::class);
-
-Route::resource('RegistroArrendatario',ControllerRegistroArrendatario::class);
 
 
 
